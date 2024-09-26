@@ -1,38 +1,23 @@
-.App {
+.country-card {
   text-align: center;
+  border: 2px solid #ccc; /* Border around each flag */
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px; /* Margin between flags */
+  transition: transform 0.2s; /* Smooth scaling effect */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.country-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the flag on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flag-grid {
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping of flags */
+  justify-content: center; /* Center align flags */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flag-grid div {
+  flex: 0 0 calc(14.2857% - 10px); /* 7 flags in a row (100% / 7) with margin */
+  box-sizing: border-box; /* Include padding and border in width calculation */
 }
